@@ -1,4 +1,4 @@
-//	EXERCISE 1
+//	LEVEL 1
 const apiUrl = 'https://icanhazdadjoke.com';
 const header: any = {
 	method: 'GET',
@@ -10,8 +10,13 @@ const header: any = {
 const showJoke = async () => {
 	const response = await fetch(apiUrl, header);
 	const data = await response.json();
-
 	const nextJoke = data.joke;
 	console.log(nextJoke);
+	document.getElementById('currentJoke')?.innerHTML = nextJoke
 	return nextJoke;
 };
+
+
+
+
+

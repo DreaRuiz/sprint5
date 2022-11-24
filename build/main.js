@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-//	EXERCISE 1
+//	LEVEL 1
 const apiUrl = 'https://icanhazdadjoke.com';
 const header = {
     method: 'GET',
@@ -16,11 +16,12 @@ const header = {
         Accept: 'application/json'
     }
 };
-g;
 const showJoke = () => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
     const response = yield fetch(apiUrl, header);
     const data = yield response.json();
     const nextJoke = data.joke;
     console.log(nextJoke);
+    (_a = document.getElementById('currentJoke')) === null || _a === void 0 ? void 0 : _a.innerHTML = nextJoke;
     return nextJoke;
 });
