@@ -21,15 +21,16 @@ p {
   border: none;
 }
 
-.btn {
+.btn-next {
   color: white;
   background-color: orange;
   width: 300px;
   height: 50px;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 
-.btn:hover {
+.btn-next:hover {
   color: white;
   background-color: rgb(241, 186, 4);
 }
@@ -41,4 +42,35 @@ p {
   bottom: 0;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.btn-primary {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+}
+
+.btn-red {
+  background-color: rgb(241, 0, 0);
+}
+
+.btn-red:hover {
+  background-color: rgb(220, 101, 101);
+}
+
+.btn-orange {
+  background-color: rgb(255, 136, 0);
+}
+
+.btn-orange:hover {
+  background-color: rgb(222, 162, 94);
+}
+
+.btn-green {
+  background-color: rgb(129, 195, 30);
+}
+
+.btn-green:hover {
+  background-color: rgb(176, 224, 103);
 }/*# sourceMappingURL=styles.css.map */

@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 //	LEVEL 1
+// Crida a la funció
 const apiUrl = 'https://icanhazdadjoke.com';
 const header = {
     method: 'GET',
@@ -16,12 +17,28 @@ const header = {
         Accept: 'application/json'
     }
 };
+// Declarar de les variables
+let currentJoke = "";
+const reportAcudits = [];
+const d = new Date();
+let dateToday = d.toISOString();
+// Mostrar acudit
 const showJoke = () => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     const response = yield fetch(apiUrl, header);
     const data = yield response.json();
-    const nextJoke = data.joke;
-    console.log(nextJoke);
-    (_a = document.getElementById('currentJoke')) === null || _a === void 0 ? void 0 : _a.innerHTML = nextJoke;
-    return nextJoke;
+    currentJoke = data.joke;
+    console.log(currentJoke);
+    (_a = document.getElementById('currentJoke')) === null || _a === void 0 ? void 0 : _a.innerHTML = currentJoke;
+    return currentJoke;
 });
+// Puntuar acudit i guardar en nou array amb data
+const evaluateJoke = (score) => {
+    let report = {
+        joke: currentJoke,
+        score: score,
+        date: dateToday,
+    };
+    reportAcudits.push(report);
+    console.log(reportAcudits);
+};

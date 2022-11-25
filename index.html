@@ -8,10 +8,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <title>Document</title>
 </head>
 
 <body>
+
   <div>
     <img class="col-12 image-bg position-fixed" src="./images/happy.png" alt="">
     <div class="row d-flex justify-content-center">
@@ -21,12 +24,19 @@
             <h1 class="card-title mb-3">Preparat per riure?</h1>
             <p id='currentJoke'></p>
           </li>
-          <button type="button" class="btn" onclick="showJoke()">Següent acudit</button>
+          <div id="score" class="scoreButtons mt-30 md-10">
+            <button type="NegativeButton" class="btn btn-primary btn-red" onclick="evaluateJoke(1)"></i></button>
+            <button type="NetralButton" class="btn btn-primary btn-orange" onclick="evaluateJoke(2)"></button>
+            <button type="PositiveButton" class="btn btn-primary btn-green" onclick="evaluateJoke(3)"></button>
+          </div>
+          <button type="button" class="btn btn-next" onclick="showJoke()">Següent acudit</button>
           </li>
         </div>
       </div>
     </div>
   </div>
+
+  
 
 
   </main>
