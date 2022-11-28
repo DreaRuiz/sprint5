@@ -10,7 +10,7 @@ La funció ASINC fa que el programa no segueixi fins que s'hagi completat la fun
 Sempre que fas una function ASINC has de posar AWAIT a dins. Serveixen perquè la funció no passi a la següent fins que aquesta no s'hagi resolt.
  */
 
-
+// LEVEL 1
 //	EXERCISE 1 i 2
 const apiUrl = "https://icanhazdadjoke.com"; // Crida a l'API, i guarda la crida a APIURL
 const header = {
@@ -71,4 +71,44 @@ const evaluateJoke = (score: number) => { // Crida a la funció i li passa per p
 	reportAcudits.push(report); // Afegeix l'objecte (acudit puntuat amb data) a l'array d'obj.
 	console.log(reportAcudits); 
   };
+
+const showJoke = async () => {
+	const response = await fetch(meteoApiUrl, meteoHeader);
+	const data = await response.json();
+	currentJoke = data.joke; ---- const {joke} = data;
+	console.log(currentJoke);
+	document.getElementById('currentJoke')?.innerHTML = currentJoke
+	return currentJoke;
+};
+
+    const {joke} = data;
+    //console.log(joke); Exercise 1
+    
+    const nextJoke = randomJoke.textContent = `"${joke}"`;
+    return nextJoke
+}
+
+// LEVEL 2
+// Crida a l'API del temps
+const meteoApiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=41.3828939&lon=2.1774322&appid=b806aa9af1c4278561101712e94879ed&lang=ca&units=metric'
+
+// Extreure les dades i mostrar-les
+const showMeteo = async () => { // Crida a la funció
+	const response = await fetch(meteoApiUrl); // Apunta a la API i als headers concrets.
+	const data = await response.json(); // Converteix la info que em dona en json.
+	
+	let temp = data.main.temp // Agafa la temperatura del json (la info del dia).
+	
+	let temperature = `${temp} ºC` // Guarda la temperatura amb el símbol de graus.
+	let meteoArray = data.weather // Busca dins l'obj el temps.
+	let meteoData = meteoArray[0] // Busca dins del temps (que és un array) per posició.
+	let meteo = meteoData.description // Busca dins l'obj que hi ha dins l'array, la descripció.
+	let weather = `${meteo}, ${temperature}` // Ho converteix en una "frase".
+	document.getElementById('meteoToday')?.innerHTML = weather // Mostrar per pantalla.
+return weather
+	
+};
+
+
+
 

@@ -42,3 +42,20 @@ const evaluateJoke = (score) => {
     reportAcudits.push(report);
     console.log(reportAcudits);
 };
+// LEVEL 2
+// Crida a l'API del temps
+const meteoApiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=41.3828939&lon=2.1774322&appid=b806aa9af1c4278561101712e94879ed&lang=ca&units=metric';
+// Extreure les dades i mostrar-les
+const showMeteo = () => __awaiter(void 0, void 0, void 0, function* () {
+    var _b;
+    const response = yield fetch(meteoApiUrl);
+    const data = yield response.json();
+    let temp = data.main.temp;
+    let temperature = `${temp} ºC`;
+    let meteoArray = data.weather;
+    let meteoData = meteoArray[0];
+    let meteo = meteoData.description;
+    let weather = `${meteo}, ${temperature}`;
+    (_b = document.getElementById('meteoToday')) === null || _b === void 0 ? void 0 : _b.innerHTML = weather;
+    return weather;
+});

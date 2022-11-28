@@ -73,4 +73,11 @@ p {
 
 .btn-green:hover {
   background-color: rgb(176, 224, 103);
+}
+
+.meteo {
+  font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 136, 0);
+  margin: 20px;
 }/*# sourceMappingURL=styles.css.map */
