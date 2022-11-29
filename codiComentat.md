@@ -109,6 +109,17 @@ return weather
 	
 };
 
+// EXERCICI 5
+// Intercalar els acudits de les dues APIs
+function showRandomJoke(){ // Crea una nova funció.
+	let option = Math.floor(Math.random() * 2) // Genero un número entre el 0 i l'1
 
+	if (option === 0){ // Si el número generat és 0 crida a la funció de la primera API.
+		showJoke()
+	}
+	if (option === 1){ // Si el número generat és 1 crida a la funció de la segona API.
+		showAcudit()
+	}
 
+}
 
