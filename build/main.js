@@ -75,15 +75,15 @@ const evaluateJoke = (score) => {
 const meteoApiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=41.3828939&lon=2.1774322&appid=b806aa9af1c4278561101712e94879ed&lang=ca&units=metric';
 // Extreure les dades i mostrar-les
 const showMeteo = () => __awaiter(void 0, void 0, void 0, function* () {
-    var _c;
+    var _c, _d;
     const response = yield fetch(meteoApiUrl);
     const data = yield response.json();
     let temp = data.main.temp;
-    let temperature = `${temp} ºC`;
+    let temperature = `${Math.round(temp)} ºC`;
     let meteoArray = data.weather;
     let meteoData = meteoArray[0];
-    let meteo = meteoData.description;
-    let weather = `${meteo}, ${temperature}`;
-    (_c = document.getElementById('meteoToday')) === null || _c === void 0 ? void 0 : _c.innerHTML = weather;
-    return weather;
+    let meteo = meteoData.icon;
+    let iconWeather = `http://openweathermap.org/img/wn/${meteo}@2x.png`; // Convertir l'string de meteo.icon en imatge
+    (_c = document.getElementById('temperature')) === null || _c === void 0 ? void 0 : _c.innerHTML = temperature; // Mostrar la temperatura
+    (_d = document.getElementById('iconWeather')) === null || _d === void 0 ? void 0 : _d.src = iconWeather; // Mostrar la l'icona
 });

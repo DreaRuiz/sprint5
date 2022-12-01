@@ -92,7 +92,7 @@ const showJoke = async () => {
 // Crida a l'API del temps
 const meteoApiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=41.3828939&lon=2.1774322&appid=b806aa9af1c4278561101712e94879ed&lang=ca&units=metric'
 
-// Extreure les dades i mostrar-les
+// Extreure les dades i mostrar-les  (EXERCICI4)
 const showMeteo = async () => { // Crida a la funció
 	const response = await fetch(meteoApiUrl); // Apunta a la API i als headers concrets.
 	const data = await response.json(); // Converteix la info que em dona en json.
@@ -120,6 +120,21 @@ function showRandomJoke(){ // Crea una nova funció.
 	if (option === 1){ // Si el número generat és 1 crida a la funció de la segona API.
 		showAcudit()
 	}
-
 }
 
+// Extreure les dades i mostrar-les (EXERCICI 6)
+const showMeteo = async () => {
+	const response = await fetch(meteoApiUrl);
+	const data = await response.json();
+	let temp = data.main.temp
+	let temperature = `${temp} ºC`
+	let meteoArray = data.weather
+	let meteoData = meteoArray[0]
+	let meteo = meteoData.icon 
+	
+// Mostrar l'icona del temps (EXERCICI 6)
+	let iconWeather = `http://openweathermap.org/img/wn/${meteo}@2x.png` // Convertir l'string de meteo.icon en imatge
+
+	document.getElementById('temperature')?.innerHTML = temperature // Mostrar la temperatura
+	document.getElementById('iconWeather')?.src = iconWeather // Mostrar la l'icona
+};

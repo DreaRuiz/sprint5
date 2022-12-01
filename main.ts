@@ -79,13 +79,14 @@ const showMeteo = async () => {
 	const response = await fetch(meteoApiUrl);
 	const data = await response.json();
 	let temp = data.main.temp
-	let temperature = `${temp} ºC`
+	let temperature = `${Math.round(temp)} ºC`
 	let meteoArray = data.weather
 	let meteoData = meteoArray[0]
-	let meteo = meteoData.description
-	let weather = `${meteo}, ${temperature}`
-	document.getElementById('meteoToday')?.innerHTML = weather
-	return weather
+	let meteo = meteoData.icon 
 
+// Mostrar l'icona del temps (EXERCICI 6)
+	let iconWeather = `http://openweathermap.org/img/wn/${meteo}@2x.png`
+
+	document.getElementById('temperature')?.innerHTML = temperature
+	document.getElementById('iconWeather')?.src = iconWeather
 };
-

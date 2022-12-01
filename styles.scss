@@ -1,74 +1,83 @@
 body {
-    background-color: white;
+	background-color: white;
 }
 h1 {
-    color: orange;
-    margin-top: 50px;
+	color: orange;
+	margin-top: 50px;
 }
 p {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    margin: 50px;
-
+	font-family: monospace;
+	font-size: 20px;
+	margin: 50px;
+	color: rgb(7, 69, 20);
 }
 .card {
-    width: 600px;
-    height: 400px;
-    align-items: center;
-    border-radius: 10px;
-    border: none
-    
-
+	width: 600px;
+	height: 400px;
+	align-items: center;
+	border: none;
+	background-color: rgba(255, 255, 255, 0);
+	margin-top: 15px;
 }
 .btn-next {
-    color: white;
-    background-color: orange;
-    width: 300px;
-    height: 50px;
-    margin-bottom: 40px;
-    margin-top: 20px;
-
+	color: white;
+	background-color: orange;
+	width: 300px;
+	height: 50px;
+	margin-bottom: 40px;
+	margin-top: 20px;
 }
 .btn-next:hover {
-    color: white;
-    background-color: rgb(241, 186, 4);
+	color: white;
+	background-color: rgb(241, 186, 4);
 }
 .image-bg {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    object-fit: cover;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	object-fit: cover;
 }
 .btn-primary {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: none;
 }
 
-.btn-red{
- background-color: rgb(241, 0, 0);
+.btn-red {
+	background-color: rgb(241, 0, 0);
 }
-    .btn-red:hover{
-        background-color: rgb(220, 101, 101);
-    }
-.btn-orange{
-    background-color: rgb(255, 136, 0);
+.btn-red:hover {
+	background-color: rgb(220, 101, 101);
 }
-    .btn-orange:hover{
-        background-color: rgb(222, 162, 94);
-    }
-.btn-green{
-    background-color: rgb(129, 195, 30);
+.btn-orange {
+	background-color: rgb(255, 136, 0);
 }
-.btn-green:hover{
-    background-color: rgb(176, 224, 103);
+.btn-orange:hover {
+	background-color: rgb(222, 162, 94);
 }
-.meteo{
-font-size: medium;
-font-family:Verdana, Geneva, Tahoma, sans-serif;
-color: rgb(255, 136, 0);
-margin: 20px;
+.btn-green {
+	background-color: rgb(129, 195, 30);
+}
+.btn-green:hover {
+	background-color: rgb(176, 224, 103);
+}
+.meteo {
+	font-size: medium;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: rgb(255, 136, 0);
+	margin: 20px;
+}
 
+.terms {
+	display: flex;
+}
+
+.blob {
+	height: 50rem;
+	width: 50rem;
+	min-width: 500px;
+	align-items: center;
+	margin-top: 5rem;
 }
